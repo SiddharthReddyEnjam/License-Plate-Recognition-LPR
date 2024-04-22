@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>License Plate Recognition</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>License Plate Recognition</h1>
+      <form action="/" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".jpg, .png" required />
+        <button type="submit">Upload</button>
+      </form>
+      {% if filename %}
+      <div class="image-container">
+        <h2>Uploaded Image</h2>
+        <img
+          class="uploaded-image"
+          src="{{ url_for('static', filename='uploads/' + filename) }}"
+          alt="Uploaded Image"
+        />
+      </div>
+      {% endif %} {% if detected_plate %}
+      <div class="plate-container">
+        <h2>Detected License Plate</h2>
+        <p>{{ detected_plate }}</p>
+      </div>
+      {% endif %}
+    </div>
+  </body>
+</html>

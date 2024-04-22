@@ -1,0 +1,19 @@
+/* styles.css */
+
+.container {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.image-container {
+  margin-bottom: 20px;
+}
+
+img {
+  max-width: 100%;
+}
+
+.uploaded-image {
+  height: 40%;
+  width: 40%;
+}
