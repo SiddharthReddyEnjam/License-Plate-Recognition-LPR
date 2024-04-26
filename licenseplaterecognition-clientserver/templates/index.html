@@ -21,9 +21,9 @@
       <div class="image-container">
         <h2>Uploaded Image</h2>
         <img
-          class="uploaded-image"
           src="{{ url_for('static', filename='uploads/' + filename) }}"
           alt="Uploaded Image"
+          class="uploaded-image"
         />
       </div>
       {% endif %} {% if detected_plate %}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OCR Result</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>OCR Result</h1>
+      <div class="image-container">
+        <h2>Original License Plate Image</h2>
+        <img
+          src="{{ url_for('static', filename='uploads/' + original_image) }}"
+          alt="Original Image"
+          class="uploaded-image"
+        />
+      </div>
+      <div class="text-container">
+        <h2>Extracted License Plate Text</h2>
+        <p>{{ text }}</p>
+      </div>
+      <a href="/" class="back-button">Back to Upload</a>
+    </div>
+  </body>
+</html>

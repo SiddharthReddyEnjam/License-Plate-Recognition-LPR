@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>License Plate Recognition Upload Image</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Digital Image Processing</h1>
+      <h1 class="index-ptitle">
+        License Plate Recognition using Digital Image Processing
+      </h1>
+      <h2 class="upload-image">Upload Image</h2>
+      <div class="upload-form">
+        <form action="/" method="post" enctype="multipart/form-data">
+          <input
+            type="file"
+            name="file"
+            accept=".jpg, .png"
+            id="image-input"
+            required
+          />
+          <label for="image-input" class="upload-label">Upload Image</label>
+          <!-- <input
+            type="file"
+            name="annotation"
+            accept=".xml"
+            id="annotation-input"
+          />
+          <label for="annotation-input" class="upload-label"
+            >Upload Annotation</label
+          > -->
+          <button type="submit">Upload</button>
+        </form>
+        {% if image_filename %}
+        <p>Uploaded Image: {{ image_filename }}</p>
+        {% endif %} {% if annotation_filename %}
+        <p>Uploaded Annotation: {{ annotation_filename }}</p>
+        {% endif %}
+      </div>
+      {% if image_filename %}
+      <p>Uploaded Image: {{ image_filename }}</p>
+      {% endif %} {% if annotation_filename %}
+      <p>Uploaded Annotation: {{ annotation_filename }}</p>
+      {% endif %}
+    </div>
+  </body>
+</html>
